@@ -1,3 +1,5 @@
+/*Submitted by :Ravikant Ujjwal */
+
 --Creating Database
 CREATE DATABASE CrimeManagement;
 
@@ -196,7 +198,7 @@ SELECT C.*
 FROM Crime C
 LEFT JOIN Suspect S 
 ON C.CrimeID = S.CrimeID
-WHERE S.Name like 'Unknown';
+WHERE S.Name is null;
 
 --Q18.List all cases where at least one incident is of type 'Homicide' and all other incidents are of type 'Robbery'
 SELECT C.*
