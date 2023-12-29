@@ -143,12 +143,12 @@ JOIN Suspect S ON C.CrimeID = S.CrimeID
 WHERE V.VictimAge IN (30, 35) OR S.SuspectAge IN (30, 35);
 
 --11. Find persons involved in incidents of the same type as 'Robbery'.
-SELECT V.VictimID as 'victim or suspectid', V.Name AS Person
+SELECT Concat('Victim id=',V.VictimID) as Person_id, V.Name AS Person_name
 FROM Victim V
 JOIN Crime C ON C.CrimeID = V.CrimeID
 WHERE C.IncidentType = 'Robbery'
 union
-SELECT S.SuspectID, S.Name
+SELECT Concat('Suspect id=',S.SuspectID), S.Name
 FROM Suspect s
 JOIN crime c ON S.CrimeID = C.CrimeID
 WHERE C.IncidentType = 'Robbery';
