@@ -184,11 +184,11 @@ ON C.CrimeID = S.CrimeID
 WHERE S.SuspectAge > V.VictimAge;
 
 --16. Find suspects involved in multiple incidents.
-SELECT S.SuspectID, S.Name, COUNT(C.CrimeID) AS 'Count of Incidents by the suspect'
+SELECT S.Name, COUNT(C.CrimeID) AS 'Count of Incidents by the suspect'
 FROM Suspect S
 JOIN Crime C 
 ON C.CrimeID=S.CrimeID
-GROUP BY S.SuspectID, S.Name
+GROUP BY S.Name
 HAVING COUNT(C.CrimeID) > 1;
 
 --17. List incidents with no suspects involved.
