@@ -86,14 +86,14 @@ UPDATE Victim
 SET VictimAge = CASE
                   WHEN VictimID=1 THEN 36
                   WHEN VictimID=2 THEN 35
-				  WHEN VictimID=3 THEN 73
+		  WHEN VictimID=3 THEN 73
                END;
 
 UPDATE Suspect
 SET SuspectAge = CASE
                   WHEN SuspectID=1 THEN 64
                   WHEN SuspectID=2 THEN 30
-				  WHEN SuspectID=3 THEN 67
+		  WHEN SuspectID=3 THEN 67
                END;
 
 with persons as(
